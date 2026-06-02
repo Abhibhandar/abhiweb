@@ -1,5 +1,4 @@
-<script>
-    function scrollToSection() {
+function scrollToSection() {
         document.getElementById("about").scrollIntoView({ behavior: "smooth" });
     }
 
@@ -15,10 +14,9 @@
             }
         });
     });
-</script>
 
 
-<script>
+
 const canvas = document.getElementById("particles-bg");
 const ctx = canvas.getContext("2d");
 
@@ -96,9 +94,9 @@ window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 });
-</script>
 
-<script>
+
+
     const bubbles = document.querySelectorAll('.bubble');
 
     bubbles.forEach(bubble => {
@@ -107,4 +105,4 @@ window.addEventListener("resize", () => {
             bubble.style.transform = `translateX(${randomX}px)`;
         }, 2000);
     });
-</script>
+
