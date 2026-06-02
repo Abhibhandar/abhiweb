@@ -1,5 +1,4 @@
-<style>
-    * {
+* {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -401,4 +400,3 @@ body {
         box-shadow: 0 0 40px rgba(198,156,109,0.8);
     }
 }
-</style>
