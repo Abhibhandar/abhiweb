@@ -1,367 +1,708 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Civic - CV Resume</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="Civic - CV Resume">
-	<meta name="keywords" content="resume, civic, onepage, creative, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->   
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barista Portfolio</title>
 
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/flaticon.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" href="css/magnific-popup.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
+    body {
+        background: #c69c6d;
+        color: #f5f5f5;
+    }
+
+    header {
+        height: 100vh;
+        
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header p {
+        margin-top: 10px;
+        font-size: 1.2rem;
+    }
+
+    header button {
+        margin-top: 20px;
+        padding: 12px 25px;
+        border: none;
+        background: #c69c6d;
+        color: white;
+        cursor: pointer;
+        border-radius: 25px;
+        transition: 0.3s;
+    }
+
+    header button:hover {
+        background: #a67c52;
+    }
+
+    section {
+        padding: 60px 10%;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        font-size: 2rem;
+        border-left: 5px solid #c69c6d;
+        padding-left: 10px;
+    }
+
+    .profile {
+        text-align: center;
+    }
+
+    .profile img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #c69c6d;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        margin-bottom: 20px;
+    }
+
+    .about, .skills, .experience {
+        margin-bottom: 40px;
+    }
+
+    .skills ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .skills li {
+        list-style: none;
+        background: #c69c6d;
+        padding: 10px 15px;
+        border-radius: 20px;
+        color: white;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+
+    .gallery img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
+    .contact {
+        text-align: center;
+    }
+
+    footer {
+        background: #2c1b18;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+
+    .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .language-proficiency {
+    margin-top: 50px;
+}
+
+.circle-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.circle-card {
+    text-align: center;
+}
+
+.circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c1b18;
+    background: conic-gradient(#c69c6d 0deg, #ddd 0deg);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 15px;
+}
+
+.circle::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #f5e6d3;
+    border-radius: 50%;
+}
+
+.circle span {
+    position: relative;
+    z-index: 1;
+}
+
+.english {
+    background: conic-gradient(#c69c6d 324deg, #ddd 0deg);
+}
+
+.nepali {
+    background: conic-gradient(#c69c6d 360deg, #ddd 0deg);
+}
+
+.hindi {
+    background: conic-gradient(#c69c6d 350deg, #ddd 0deg);
+}
+
+.danish {
+    background: conic-gradient(#c69c6d 98deg, #ddd 0deg);
+}
+
+body {
+    margin: 0;
+    
+    background: #a07e58;
+}
+
+#particles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #2c1b18, #c69c6d);
+    min-height: 100vh;
+}
+
+.animated-bg {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    animation: float 15s infinite linear;
+}
+
+/* Different sizes and positions */
+.bubble:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    left: 10%;
+    top: 80%;
+    animation-duration: 14s;
+}
+
+.bubble:nth-child(2) {
+    width: 180px;
+    height: 180px;
+    left: 30%;
+    top: 90%;
+    animation-duration: 18s;
+}
+
+.bubble:nth-child(3) {
+    width: 100px;
+    height: 100px;
+    left: 55%;
+    top: 85%;
+    animation-duration: 12s;
+}
+
+.bubble:nth-child(4) {
+    width: 160px;
+    height: 160px;
+    left: 75%;
+    top: 95%;
+    animation-duration: 20s;
+}
+
+.bubble:nth-child(5) {
+    width: 130px;
+    height: 130px;
+    left: 90%;
+    top: 88%;
+    animation-duration: 16s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) translateX(40px) scale(1.3);
+        opacity: 0;
+    }
+}   
 
 
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
+.coffee-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
 
+.coffee-bg span {
+    position: absolute;
+    bottom: -100px;
+    font-size: 2rem;
+    opacity: 0.15;
+    animation: floatCoffee 12s linear infinite;
+}
+
+/* Different positions and timings */
+.coffee-bg span:nth-child(1) {
+    left: 10%;
+    animation-duration: 10s;
+}
+
+.coffee-bg span:nth-child(2) {
+    left: 25%;
+    animation-duration: 14s;
+    font-size: 2.5rem;
+}
+
+.coffee-bg span:nth-child(3) {
+    left: 45%;
+    animation-duration: 11s;
+}
+
+.coffee-bg span:nth-child(4) {
+    left: 60%;
+    animation-duration: 15s;
+    font-size: 1.8rem;
+}
+
+.coffee-bg span:nth-child(5) {
+    left: 75%;
+    animation-duration: 13s;
+}
+
+.coffee-bg span:nth-child(6) {
+    left: 90%;
+    animation-duration: 9s;
+}
+
+/* Floating animation */
+@keyframes floatCoffee {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.15;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.barista-logo {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 20px;
+
+    animation: floatLogo 4s ease-in-out infinite;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.35));
+}
+
+/* Floating animation */
+@keyframes floatLogo {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.barista-logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    padding: 12px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.2);
+
+    animation: floatLogo 4s ease-in-out infinite,
+               glowRing 3s ease-in-out infinite;
+}
+
+@keyframes glowRing {
+    0%,100% {
+        box-shadow: 0 0 20px rgba(198,156,109,0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(198,156,109,0.8);
+    }
+}
+
+
+</style>
 </head>
+
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
-	
-	<!-- Header section start -->
-	<header class="header-section">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="site-logo">
-						<h2><a href="#">Abhi bhandari</a></h2>
-						<p>"I am Batman"</p>
-					</div>
-				</div>
-				<div class="col-md-8 text-md-right header-buttons">
-					<a href="#" class="site-btn">Download CV</a>
-					<a href="#" class="site-btn">Discover me</a>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- Header section end -->
 
-	<!-- Hero section start -->
-	<section class="hero-section spad">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-10 offset-xl-1">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="hero-text">
-								<h2>Abhi bhandari</h2>
-								<p>I’m a digital designer in love with photography, painting and discovering new worlds and cultures.</p>
-							</div>
-							<div class="hero-info">
-								<h2>General Info</h2>
-								<ul>
-									<li><span>Date of Birth</span>Aug 25, 2001</li>
-									<li><span>Address</span>Kapan, Kathmandu</li>
-									<li><span>E-mail</span>theabhibhandari@gmail.com</li>
-									<li><span>Phone </span>+977-9807922659</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<figure class="hero-image">
-								<img src="img/hero.jpg" alt="5">
-							</figure>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Hero section end -->
-
-	<!-- Social links section start -->
-	<div class="social-section">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-10 offset-xl-1">
-					<div class="social-link-warp">
-						<div class="social-links">
-							<a href=""><i class="fa fa-pinterest"></i></a>
-							<a href=""><i class="fa fa-linkedin"></i></a>
-							<a href="https://www.instagram.com/im_heisenberg1/"><i class="fa fa-instagram"></i></a>
-							<a href=""><i class="fa fa-facebook"></i></a>
-							<a href=""><i class="fa fa-twitter"></i></a>
-						</div>
-						<h2 class="hidden-md hidden-sm">My Social Profiles</h2>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>	
-	<!-- Social links section end -->
-
-	<!-- Resume section start -->
-	<section class="resume-section spad">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-7 offset-xl-2">
-					<div class="section-title">
-						<h2>Work Experience</h2>
-					</div>
-					<ul class="resume-list">
-						<li>
-							<h2>2020-Present</h2>
-							<h3>Clover Consultancy</h3>
-							<h4>Visa Head</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor orci ut sapien scelerisque viverra. Sed trist ique justo nec mauris efficitur, ut lacinia elit dapibus. In egestas elit in dap ibus laoreet. Duis magna libero, fermentum ut facilisis id, pulvinar eget tortor. Vestibulum pelle ntesque tincidunt lorem, vitae euismod felis porttitor sed. </p>
-						</li>
-						<li>
-							<h2>2019-2020</h2>
-							<h3>Fashion Designer</h3>
-							<h4>Gucci</h4>
-							<p>Sit amet, consectetur adipiscing elit. Sed porttitor orci ut sapien scelerisque viverra. Sed trist ique justo nec mauris efficitur, ut lacinia elit dapibus. In egestas elit in dap ibus laoreet. Duis magna libero, fermentum ut facilisis id, pulvinar eget tortor. Vestibulum pelle ntesque tincidunt lorem, vitae euismod felis porttitor sed. </p>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Resume section end -->
-
-	<!-- Resume section start -->
-	<section class="resume-section with-bg spad">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-7 offset-xl-2">
-					<div class="section-title">
-						<h2>Education</h2>
-					</div>
-					<ul class="resume-list">
-						<li>
-							<h2>2019</h2>
-							<h3>Higher Secondary Education</h3>
-							<h4>Global Educational Academy</h4>
-							<p>GPA - 3.4</p>
-						</li>
-						<li>
-							<h2></h2>
-							<h3>Secondary Education Examination</h3>
-							<h4>Shree Gyanodaya Res. Sec. School</h4>
-							<p>GPA - 3.25 </p>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Resume section end -->
-
-	
-	<!-- Review section start -->
-	<section class="review-section spad pb-0">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-7 offset-xl-2">
-					<div class="section-title">
-						<h2>References</h2>
-					</div>
-					<div class="review-slider owl-carousel">
-						<div class="single-review">
-							<div class="qut">“</div>
-							<p>Sit amet, consectetur adipiscing elit. Sed porttitor orci ut sapien scelerisque viverra. Sed trist ique justo nec mauris efficitur, ut lacinia elit dapibus. In egestas elit in dap ibus laoreet. Duis magna libero, fermentum ut facilisis id, pulvinar eget tortor. Vestibulum pelle ntesque tincidunt lorem, vitae euismod felis porttitor sed. </p>
-							<h3>Robert G. Smith</h3>
-							<h4>Manager, Company</h4>
-						</div>
-						<div class="single-review">
-							<div class="qut">“</div>
-							<p>Sit amet, consectetur adipiscing elit. Sed porttitor orci ut sapien scelerisque viverra. Sed trist ique justo nec mauris efficitur, ut lacinia elit dapibus. In egestas elit in dap ibus laoreet. Duis magna libero, fermentum ut facilisis id, pulvinar eget tortor. Vestibulum pelle ntesque tincidunt lorem, vitae euismod felis porttitor sed. </p>
-							<h3>Robert G. Smith</h3>
-							<h4>Manager, Company</h4>
-						</div>
-						<div class="single-review">
-							<div class="qut">“</div>
-							<p>Sit amet, consectetur adipiscing elit. Sed porttitor orci ut sapien scelerisque viverra. Sed trist ique justo nec mauris efficitur, ut lacinia elit dapibus. In egestas elit in dap ibus laoreet. Duis magna libero, fermentum ut facilisis id, pulvinar eget tortor. Vestibulum pelle ntesque tincidunt lorem, vitae euismod felis porttitor sed. </p>
-							<h3>Robert G. Smith</h3>
-							<h4>Manager, Company</h4>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Review section end -->
-
-
-	<!-- Portfolio section start -->
-	<section class="portfolio-section spad pb-0">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-4 col-md-8 offset-xl-2 ">
-					<div class="section-title">
-						<h2>Portfolio</h2>
-					</div>
-				</div>
-				<div class="col-md-4 text-md-right">
-					<a href="#" class="site-btn mb-5">See All Portfolio</a>
-				</div>
-			</div>
-			<div class="portfolio-warp">
-				<div class="row">
-					<div class="col-xl-3 col-lg-6 col-md-6">
-						<div class="portfolio-item">
-							<a href="img/portfolio/1.jpg" class="set-bg port-pic" data-setbg="img/portfolio/1.jpg"></a>
-							<h2>Brand Campaign</h2>
-							<p>Graphic design</p>
-						</div>
-					</div>
-					<div class="col-xl-3 col-lg-6 col-md-6">
-						<div class="portfolio-item">
-							<a href="img/portfolio/2.jpg" class="set-bg port-pic" data-setbg="img/portfolio/2.jpg"></a>
-							<h2>A Corporate Identity</h2>
-							<p>Graphic design</p>
-						</div>
-					</div>
-					<div class="col-xl-3 col-lg-6 col-md-6">
-						<div class="portfolio-item">
-							<a href="img/portfolio/3.jpg" class="set-bg port-pic" data-setbg="img/portfolio/3.jpg"></a>
-							<h2>Web Design Website</h2>
-							<p>Graphic design</p>
-						</div>
-					</div>
-					<div class="col-xl-3 col-lg-6 col-md-6">
-						<div class="portfolio-item">
-							<a href="img/portfolio/4.jpg" class="set-bg port-pic" data-setbg="img/portfolio/4.jpg"></a>
-							<h2>Logo design</h2>
-							<p>Graphic design</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Portfolio section end -->
-
-	<!-- Extra section start -->
-	<section class="extra-section spad pb-0">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-8 offset-xl-2">
-					<div class="section-title">
-						<h2>Extra Skills</h2>
-					</div>
-					<div class="row">
-						<div class="col-lg-3 col-md-6 pt-5">
-							<div class="fact-box trans">
-								<div class="fact-content">
-									<div class="circle-progress">
-										<div id="progress1" class="prog-circle"></div>
-										<div class="progress-info">
-											<h2>75%</h2>
-										</div>
-										<div class="prog-title">
-											<h3>Inspiration</h3>
-											<p>Etiam nec odio vestibulum est.</p>
-										</div>			
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 pt-5">
-							<div class="fact-box trans">
-								<div class="fact-content">
-									<div class="circle-progress">
-										<div id="progress2" class="prog-circle"></div>
-										<div class="progress-info">
-											<h2>83%</h2>
-										</div>
-										<div class="prog-title">
-											<h3>Inspiration</h3>
-											<p>Etiam nec odio vestibulum est.</p>
-										</div>			
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="fact-box">
-								<div class="fact-content">
-									<img src="img/icon/1-w.png" alt="">
-									<h2>14</h2>
-									<p>Years of Experience</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="fact-box">
-								<div class="fact-content">
-									<img src="img/icon/2-w.png" alt="">
-									<h2>9</h2>
-									<p>Awards Won</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Extra section end -->
-
-	<!-- Contact section start -->
-	<section class="contact-section spad">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-8 offset-xl-2">
-					<div class="section-title">
-						<h2>Contact Me</h2>
-					</div>
-					<form class="contact-form">
-						<div class="row">
-							<div class="col-md-6">
-								<input type="text" placeholder="Name">
-							</div>
-							<div class="col-md-6">
-								<input type="text" placeholder="E-mail">
-							</div>
-							<div class="col-md-12">
-								<input type="text" placeholder="Subject">
-								<textarea placeholder="Message"></textarea>
-							</div>
-						</div>
-						<div class="text-md-right">
-							<button class="site-btn">Send message</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Contact section end -->
-
-	<!-- Footer section start -->
-	<footer class="footer-section">
-		<div class="container text-center">
-			<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">anmol poudel</a> &amp; distirbuted by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+<div class="coffee-bg">
+    <span>☕</span>
+    <span>☕</span>
+    <span>☕</span>
+    <span>☕</span>
+    <span>☕</span>
+    <span>☕</span>
 </div>
-		</div>
-	</footer>
-	<!-- Footer section end -->
+
+    <div class="animated-bg">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+</div>
+
+    <canvas id="particles-bg"></canvas>
 
 
-	<!--====== Javascripts & Jquery ======-->
-	<script src="js/jquery-2.1.4.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/magnific-popup.min.js"></script>
-	<script src="js/circle-progress.min.js"></script>
-	<script src="js/main.js"></script>
+<header>
+    <div class="hero-content">
+    
+    <img src="male.png" alt="Barista Logo" class="barista-logo">
+
+    <h1>Abhi Bhandari</h1>
+
+    <p>Professional Barista | Coffee Artist</p>
+
+    <button onclick="scrollToSection()">
+        Explore My Work
+    </button>
+
+</div>
+</header>
+
+<section class="fade-in profile" id="about">
+    <h2>Profile</h2>
+    <img src="my-profile.jpg">
+    
+</section>
+
+<section class="fade-in language-proficiency">
+    <h2>Language Proficiency</h2>
+
+    <div class="circle-container">
+        <div class="circle-card">
+            <div class="circle english">
+                <span>90%</span>
+            </div>
+            <p>English</p>
+        </div>
+
+        <div class="circle-card">
+            <div class="circle nepali">
+                <span>100%</span>
+            </div>
+            <p>Nepali</p>
+        </div>
+
+        <div class="circle-card">
+            <div class="circle hindi">
+                <span>80%</span>
+            </div>
+            <p>Hindi</p>
+        </div>
+
+        <div class="circle-card">
+            <div class="circle danish">
+                <span>30%</span>
+            </div>
+            <p>Danish</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="fade-in about">
+    <h2>About Me</h2>
+    <p>Passionate and customer-focused barista with strong expertise in coffee preparation, beverage presentation, and delivering exceptional service. Skilled in crafting high-quality drinks with precision and consistency while maintaining attention to detail in a fast-paced environment. Known for creating a warm and welcoming atmosphere for customers, building positive relationships, and ensuring every guest enjoys a memorable experience. Dedicated, efficient, and enthusiastic about combining excellent service with a genuine passion for coffee.
+</p>
+</section>
+
+<section class="fade-in skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>Espresso Extraction</li>
+        <li>Latte Art</li>
+        <li>Milk Texturing</li>
+        <li>V60 Brewing</li>
+        <li>Customer Service</li>
+        <li>Inventory Management</li>
+        <li>Grinder Calibration</li>
+        <li>Multitasking in Fast-Paced Environments</li>
+        <li>Cash Handling & POS Operation</li>
+        <li>Hygiene & Food Safety Standards</li>
+
+    </ul>
+</section>
+
+<section class="fade-in">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <img src="1.jpg">
+        <img src="2.jpg">
+        <img src="3.jpg">
+        <img src="4.jpg">
+        <img src="5.jpg">
+        <img src="6.jpg">
+        <img src="7.jpg">
+        <img src="8.jpg">
+        <img src="9.jpg">
+        <img src="10.jpg">
+        <img src="11.jpg">
+        <img src="12.jpg">
+    </div>
+</section>
+
+<section class=\"fade-in\">
+    <h2>Video Showcase</h2>
+    <div class=\"gallery\">
+        <video controls style=\"width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);\">
+            <source src="coffee1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <video controls style=\"width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);\">
+            <source src="coffee2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+    </div>
+
+   
+        
+
+        
+    </div>
+</section>
+
+<section class=\"fade-in experience\">
+    <h2>Experience</h2>
+    <p><strong>Barista – Sonny Cafe</strong>
+    2025 July – Present (full time)</p>
+    <li>Developed V60 brewing and coffee bean profiles.</li>
+    <Li>Pos System</Li>
+    <li>Improved customer interaction and service skills through hospitality-related work.</li>
+    <li>Prepared high-quality espresso-based beverages, including lattes, cappuccinos, americanos, and specialty drinks.</li>
+    <li>Delivered excellent customer service by taking orders accurately and ensuring a welcoming atmosphere.</li>
+    <li>Prepared high-quality espresso-based beverages, including lattes, cappuccinos, americanos, and specialty drinks.</li>
+    <br>
+    <strong>Barista – Daggry Cafe</strong> 
+    2026 Jan – Present(Part time)
+    <li>Created clean and consistent latte art while maintaining beverage presentation standards.</li>
+    <li>Operated POS system, handled cash and digital payments, and managed billing efficiently.</li>
+    <li>Maintained cleanliness of coffee machines, grinders, and the workspace following hygiene standards.</li>
+    <li>Assisted with stock checking, milk and bean inventory, and daily opening/closing duties.</li>
+    
+
+</section>
+
+<section class="fade-in contact">
+    <h2>Contact</h2>
+    <p>Email: theabhibhandari@gmail.com</p>
+    <p>Phone: +4591667162</p>
+    <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="https://instagram.com/_abhibhandari" target="_blank" style="text-decoration: none; color: #2c1b18; font-weight: 600; padding: 10px 18px; border-radius: 30px; background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.12); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 18px rgba(0,0,0,0.18)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.12)'">📷 Instagram</a>
+        <a href="https://www.facebook.com/share/1AoWY4FdHE/?mibextid=wwXIfr" target="_blank" style="text-decoration: none; color: #2c1b18; font-weight: 600; padding: 10px 18px; border-radius: 30px; background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.12); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 18px rgba(0,0,0,0.18)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.12)'">📘 Facebook</a>
+        <a href="https://tiktok.com/@abhibhandari_01" target="_blank" style="text-decoration: none; color: #2c1b18; font-weight: 600; padding: 10px 18px; border-radius: 30px; background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.12); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 18px rgba(0,0,0,0.18)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.12)'">🎵 TikTok</a>
+    </div>
+</section>
+
+<footer>
+    <p>If you love performance, don't hesitate to reach me out</p>
+</footer>
+
+<script>
+    function scrollToSection() {
+        document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+    }
+
+    const elements = document.querySelectorAll(".fade-in");
+
+    window.addEventListener("scroll", () => {
+        elements.forEach(el => {
+            const position = el.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+
+            if (position < screenPosition) {
+                el.classList.add("show");
+            }
+        });
+    });
+</script>
+
+
+<script>
+const canvas = document.getElementById("particles-bg");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+const particleCount = 80;
+
+class Particle {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 1 - 0.5;
+        this.speedY = Math.random() * 1 - 0.5;
+    }
+
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+    }
+
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(255,255,255,0.8)";
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = "white";
+        ctx.fill();
+    }
+}
+
+for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+}
+
+function connectLines() {
+    for (let a = 0; a < particles.length; a++) {
+        for (let b = a; b < particles.length; b++) {
+            let dx = particles[a].x - particles[b].x;
+            let dy = particles[a].y - particles[b].y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 120) {
+                ctx.beginPath();
+                ctx.strokeStyle = `rgba(255,255,255,${1 - distance / 120})`;
+                ctx.lineWidth = 0.5;
+                ctx.moveTo(particles[a].x, particles[a].y);
+                ctx.lineTo(particles[b].x, particles[b].y);
+                ctx.stroke();
+            }
+        }
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+    });
+
+    connectLines();
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
+
+<script>
+    const bubbles = document.querySelectorAll('.bubble');
+
+    bubbles.forEach(bubble => {
+        setInterval(() => {
+            const randomX = Math.random() * 50 - 25;
+            bubble.style.transform = `translateX(${randomX}px)`;
+        }, 2000);
+    });
+</script>
+
+
+
 </body>
 </html>
